@@ -7,6 +7,7 @@ table {
     text-align: center;
     border-collapse: collapse;
     box-shadow: 0 0 15px #ccc;
+    width: 85%;
 }
 
 td {
@@ -67,7 +68,7 @@ marquee {
     background-color: lightblue;
     border-radius: 1em;
     top:25vh;
-    left:8%;
+    left:10%;
 }
 #closeBtn{
     position: absolute;
@@ -98,4 +99,10 @@ header{
 }
 .number{
     text-align: center;
+}
+.price::before{
+    content: "$";
+}
+.sum::before{
+    content:"$"
 }

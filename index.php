@@ -26,11 +26,12 @@ $pdo = new PDO($dsn, "root", '');
         <div class="background">
             <div>
             <button type="button" onclick="closeF()" id="closeBtn">x</button>
-            <span>總計：</span><span id="checkout"></span>
+            <span>總計：</span><span id="checkout"></span><span>元</span>
             </div>
             <div id="discount">
             <span>優惠價：</span>
             <span id="discountCheckout"></span>
+            <span>元</span>
             </div>
         </div>
     </div>
