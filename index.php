@@ -58,19 +58,7 @@ $pdo = new PDO($dsn, "root", '');
                 <td><img src="<?= $row['file_name'] ?>" alt=""></td>
                 <td class="price"><?= $row['price'] ?></td>
                 <td>
-                    <select name="number" class="number" onchange="sum()">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
+                    <input type="number" name="number" class="number" onchange="sum()" value="0" min="0">
                 </td>
                 <td class="sum">0</td>
             </tr>
@@ -103,6 +91,10 @@ $pdo = new PDO($dsn, "root", '');
         function sum() {
             total.innerText = 0;
             for (i = 0; i < count; i++) {
+                if(Number(num[i].value)<0){
+                    num[i].value=0;
+                }
+                num[i].value=parseInt(num[i].value);
                 sums[i].innerText = Number(prices[i].innerText) * Number(num[i].value);
             }
             for (i = 0; i < count; i++) {
